@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-server-dep
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo-serve
+  template:
+    metadata:
+      labels:
+        app: todo-serve
+    spec:
+      containers:
+        - name: todo-serve
+          image: arnonthegreat/kubeserver:1.3
